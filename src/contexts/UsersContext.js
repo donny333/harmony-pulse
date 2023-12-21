@@ -31,18 +31,18 @@ const Users = ( { children } ) => {
                 type: usersActionTypes.load,
                 data: data
             }))
-
     }, [])
-
 
     return (
         <UsersContext.Provider
-            value={ {
+            value={{
+                users,
+                setUsers,
                 currentUser,
                 setCurrentUser
             }}
         >
-            {children}
+            { children }
         </UsersContext.Provider>
     );
 }

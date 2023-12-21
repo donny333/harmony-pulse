@@ -7,7 +7,7 @@
             "email": "a@gmail.com",
             "password": "password",
             "admin": false,
-            "photo": "link"
+            "photoUrl": "url"
         }
     ]
 }
