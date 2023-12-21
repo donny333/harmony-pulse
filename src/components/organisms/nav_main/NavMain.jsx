@@ -7,6 +7,7 @@ const NavMain = () => {
         <StyledNavMain>
             <NavLink to={"/"}>Home</NavLink>
             <NavLink to={"/login"}>Login</NavLink>
+            <NavLink to={"/register"}>Register</NavLink>
             <NavLink to={"/contacts"}>Contacts</NavLink>
         </StyledNavMain>
     );
