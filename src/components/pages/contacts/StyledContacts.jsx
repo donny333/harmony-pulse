@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const StyledHome = styled.section`
+const StyledContacts = styled.section`
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -13,4 +13,4 @@ const StyledHome = styled.section`
     }
 `;
 
-export default StyledHome;
+export default StyledContacts;

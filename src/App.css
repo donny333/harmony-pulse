@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body{
   padding: 75px;
   height: 100vh;
   box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
 }
 #root{
   width: 100%;
