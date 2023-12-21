@@ -26,12 +26,11 @@ const Register = () => {
             <h1>Register page</h1>
             <Formik
                 initialValues={values}
-                validationSchema={SignupSchema}
                 onSubmit={values => {
                     // same shape as initial values
                     console.log(values);
                 }}
-            />
+            >
             {({
                 values,
                 errors,
@@ -42,7 +41,7 @@ const Register = () => {
                 isSubmitting
             }) => (
 
-            <form action="">
+            <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" id="name"
@@ -94,6 +93,7 @@ const Register = () => {
                 <button type="submit">Submit</button>
             </form>
             )}
+            </Formik>
         </StyledRegister>
     );
 }

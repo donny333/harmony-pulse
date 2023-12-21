@@ -18,10 +18,6 @@ const Users = ( { children } ) => {
 
     const [users,setUsers] = useReducer(reducer, []);
 
-    if(users){
-        console.log(users)
-    }
-
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(()=>{
