@@ -32,8 +32,6 @@ const Users = ( { children } ) => {
 
     const [currentUser, setCurrentUser] = useState(null);
 
-    console.log(users);
-
     useEffect(()=>{
         fetch('http://localhost:8080/users')
             .then(res => res.json())
