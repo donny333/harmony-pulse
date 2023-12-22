@@ -6,17 +6,6 @@ import { useContext, useState } from "react";
 import UsersContext from "../../../contexts/UsersContext";
 import { useNavigate } from "react-router-dom";
 
-
-let user = {
-    "id": 1,
-    "name": "name",
-    "lastName": "surname",
-    "email": "a@gmail.com",
-    "password": "password",
-    "admin": false,
-    "photoUrl": "url"
-}
-
 let initialValues = {
     name: '',
     lastName: '',
