@@ -2,8 +2,9 @@ import StyledRegister from "./StyledRegister";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
 import {v4 as uuid} from 'uuid';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UsersContext from "../../../contexts/UsersContext";
+import { useNavigate } from "react-router-dom";
 
 
 let user = {
@@ -55,20 +56,35 @@ const Register = () => {
     
     const {users, setUsers, usersActionTypes} = useContext(UsersContext);
 
+    const [emailExistsInDb ,setEmailExistsInDb] = useState(false);
+
+    const navigate = useNavigate();
+
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: validationScheme,
         onSubmit: values => {
             const { repeatPassword, ...filteredValues } = values;
-            const user = {
+            const newUser = {
                 ...filteredValues,
                 id: uuid(),
                 admin: false
             }
-            setUsers({
-                type: usersActionTypes.add,
-                data: user
-            });
+
+            const emailExists = users.find((existingUser) => existingUser.email === newUser.email);
+
+            if(! emailExists){
+                setUsers({
+                    type: usersActionTypes.add,
+                    data: newUser
+                })
+                setEmailExistsInDb(false);
+                navigate('/login');
+            } else {
+                console.log('This email already exists.');
+                setEmailExistsInDb(true);
+            }
+
             console.log(users)
         },
     });
@@ -132,6 +148,7 @@ const Register = () => {
                 </div>
                     {formik.touched.photoUrl && formik.errors.photoUrl ? (<p>{formik.errors.photoUrl}</p>) : null}
                 <button type="submit">Submit</button>
+                {emailExistsInDb ? <p>User with this email already exists!</p> : null}
             </form>
         </StyledRegister>
     );

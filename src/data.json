@@ -37,6 +37,24 @@
       "photoUrl": "",
       "id": "8d02aa15-1332-42af-8f79-7aa8ef2588a9",
       "admin": false
+    },
+    {
+      "name": "sadfdsa",
+      "lastName": "asdfasdf",
+      "email": "beauty2@gmail.com",
+      "password": "beauty123!A",
+      "photoUrl": "",
+      "id": "a881c1d5-bc09-42ea-98ac-80076f48462a",
+      "admin": false
+    },
+    {
+      "name": "donas",
+      "lastName": "dondonas",
+      "email": "beauty3@gmail.com",
+      "password": "beauty123!A",
+      "photoUrl": "",
+      "id": "bc53fce6-03c5-4817-b90f-4d1ab1aebcc9",
+      "admin": false
     }
   ]
 }
