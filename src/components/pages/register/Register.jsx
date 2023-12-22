@@ -1,8 +1,12 @@
 import StyledRegister from "./StyledRegister";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import {v4 as uuid} from 'uuid';
+import { useContext } from "react";
+import UsersContext from "../../../contexts/UsersContext";
 
-let users = {
+
+let user = {
     "id": 1,
     "name": "name",
     "lastName": "surname",
@@ -48,12 +52,23 @@ const validationScheme = Yup.object().shape({
 });
 
 const Register = () => {
+    
+    const {users, setUsers, usersActionTypes} = useContext(UsersContext);
 
     const formik = useFormik({
         initialValues: initialValues,
         validationSchema: validationScheme,
         onSubmit: values => {
-            console.log(values)
+            const user = {
+                ...values,
+                id: uuid(),
+                admin: false
+            }
+            setUsers({
+                type: usersActionTypes.add,
+                data: user
+            });
+            console.log(users)
         },
     });
 

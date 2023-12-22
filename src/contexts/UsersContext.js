@@ -7,10 +7,22 @@ const usersActionTypes = {
     add: "add_a_user"
 };
 
+
 const reducer = (state, action) => {
     switch(action.type){
         case usersActionTypes.load:
             return action.data;
+        case usersActionTypes.add:
+            fetch('http://localhost:8080/users', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(action.data)
+            })
+            return [...state, action.data];
+        default:
+            return state;
     }
 }
 
@@ -19,6 +31,8 @@ const Users = ( { children } ) => {
     const [users,setUsers] = useReducer(reducer, []);
 
     const [currentUser, setCurrentUser] = useState(null);
+
+    console.log(users);
 
     useEffect(()=>{
         fetch('http://localhost:8080/users')
@@ -35,7 +49,8 @@ const Users = ( { children } ) => {
                 users,
                 setUsers,
                 currentUser,
-                setCurrentUser
+                setCurrentUser,
+                usersActionTypes
             }}
         >
             { children }
