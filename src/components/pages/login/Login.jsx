@@ -1,5 +1,8 @@
 import { useFormik } from "formik";
 import StyledLogin from "./StyledLogin";
+import { useContext, useState } from "react";
+import UsersContext from "../../../contexts/UsersContext";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
     email: '',
@@ -8,10 +11,25 @@ const initialValues = {
 
 const Login = () => {
 
+    const {users, setCurrentUser} = useContext(UsersContext);
+
+    const navigate = useNavigate();
+
+    const [ wrongData, setWrongData ] = useState(false);
+
     const formik = useFormik({
         initialValues: initialValues,
         onSubmit: values =>{
             console.log(values)
+            const userExists = users.find((existingUser) => existingUser.email === values.email && existingUser.password === values.password);
+            
+            if (userExists) {
+                setCurrentUser(userExists);
+                setWrongData(false);
+                navigate('/');
+            } else {
+                setWrongData(true)
+            }
         }
     });
 
@@ -34,6 +52,7 @@ const Login = () => {
                 />
             </div>
             <button type="submit">Log in</button>
+            { wrongData ? <p>Username or password does not match.</p> : null}
         </form>
     </StyledLogin>
     );
