@@ -26,7 +26,7 @@ const Login = () => {
             if (userExists) {
                 setCurrentUser(userExists);
                 setWrongData(false);
-                navigate('/');
+                navigate('/dashboard');
             } else {
                 setWrongData(true)
             }

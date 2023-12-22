@@ -1,14 +1,26 @@
+import { useContext } from "react";
 import StyledNavMain from "./StyledNavMain";
 import { NavLink } from "react-router-dom";
+import UsersContext from "../../../contexts/UsersContext";
+import LinkSetLoggedOut from "../../molecules/links_main/logeedout/LinkSetLoggedOut";
+import LinkSetUser from "../../molecules/links_main/user/LinkSetUser";
+import LinkSetAdmin from "../../molecules/links_main/admin/LinkSetAdmin"
 
 
 const NavMain = () => {
+
+    const {currentUser, setCurrentUser} =useContext(UsersContext);
+
     return ( 
         <StyledNavMain>
-            <NavLink to={"/"}>Home</NavLink>
-            <NavLink to={"/login"}>Login</NavLink>
-            <NavLink to={"/register"}>Register</NavLink>
-            <NavLink to={"/contacts"}>Contacts</NavLink>
+            {
+                ! currentUser ?
+                <LinkSetLoggedOut/>
+                : currentUser.admin ?
+                <LinkSetAdmin/> :
+                <LinkSetUser />
+            
+            }
         </StyledNavMain>
     );
 }

@@ -6,7 +6,7 @@
       "lastName": "surname",
       "email": "a@gmail.com",
       "password": "password",
-      "admin": false,
+      "admin": true,
       "photoUrl": "url"
     },
     {
