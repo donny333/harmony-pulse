@@ -28,6 +28,15 @@
       "photoUrl": "",
       "id": "c0062fc5-2f82-47e1-8234-0f180b63299e",
       "admin": false
+    },
+    {
+      "name": "sadfdsa",
+      "lastName": "asdfasdf",
+      "email": "beauty@gmail.com",
+      "password": "beauty123!A",
+      "photoUrl": "",
+      "id": "8d02aa15-1332-42af-8f79-7aa8ef2588a9",
+      "admin": false
     }
   ]
 }

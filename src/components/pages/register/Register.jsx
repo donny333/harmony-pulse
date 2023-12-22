@@ -59,8 +59,9 @@ const Register = () => {
         initialValues: initialValues,
         validationSchema: validationScheme,
         onSubmit: values => {
+            const { repeatPassword, ...filteredValues } = values;
             const user = {
-                ...values,
+                ...filteredValues,
                 id: uuid(),
                 admin: false
             }
