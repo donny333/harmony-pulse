@@ -81,11 +81,19 @@
       "trainings": [
         {
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-8",
+          "trainingId": "HJ-1-18",
           "trainerId": 2,
           "trainingDay": 1,
           "trainingStart": "18:00",
           "trainingEnd": "19:00"
+        },
+        {
+          "trainingName": "Hatha joga",
+          "trainingId": "HJ-1-19",
+          "trainerId": 2,
+          "trainingDay": 1,
+          "trainingStart": "19:10",
+          "trainingEnd": "20:10"
         }
       ]
     }
