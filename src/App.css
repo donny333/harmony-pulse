@@ -43,6 +43,8 @@ body{
   > p {
     margin: 0;
     font-size: 12px;
+    font-weight: 300;
+    color: #282828;
   }
   > h4 {
     margin: 0;
