@@ -73,18 +73,21 @@
       "admin": false
     }
   ],
-  "clubs":[
+  "clubs": [
     {
-      "clubName": "Laukinė Vyšnia",
+      "id": "club_01",
       "adminId": 1,
+      "clubName": "Laukinė Vyšnia",
       "trainings": [
         {
-          "trainingId": 111,
-          "trainingName": "H Yoga",
-          "trainingTimes": []
+          "trainingName": "Hatha joga",
+          "trainingId": "HJ-1-8",
+          "trainerId": 2,
+          "trainingDay": 1,
+          "trainingStart": "18:00",
+          "trainingEnd": "19:00"
         }
       ]
-
     }
   ]
 }

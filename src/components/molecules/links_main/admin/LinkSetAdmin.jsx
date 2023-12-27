@@ -6,6 +6,8 @@ const LinkSetUser = () => {
     return ( 
         <StyledLinksMain>
             <NavLink to={"/dashboard"}>Dashboard</NavLink>
+            <NavLink to={"/training/create"}>Create Training</NavLink>
+            <NavLink to={"/training/edit"}>Edit Training</NavLink>
             <Logout/>
         </StyledLinksMain>
      );

@@ -11,6 +11,7 @@ import AdminDashboard from './components/pages/dashboards/admin/AdminDashboard';
 import UserDashboard from './components/pages/dashboards/user/UserDashboard';
 import { Route, Routes } from 'react-router-dom';
 import UsersContext from './contexts/UsersContext';
+import TrainingCreate from './components/pages/trainings/create/TrainingCreate';
 
 function App() {
 
@@ -32,6 +33,8 @@ function App() {
           currentUser.admin ?
           <Routes>
             <Route path='/dashboard' element={<AdminDashboard/>} />
+            <Route path='/training/create' element={<TrainingCreate/>} />
+            <Route path='/training/edit' element={<AdminDashboard/>} />
           </Routes> : 
           <Routes>
             <Route path='/dashboard' element={<UserDashboard/>} />
