@@ -2,16 +2,52 @@
   "users": [
     {
       "id": 1,
-      "name": "name",
-      "lastName": "surname",
-      "email": "a@gmail.com",
+      "name": "Maksimilianas",
+      "lastName": "Savickas",
+      "email": "max@vysnia.com",
       "password": "AbCd333___!!1!--",
       "admin": true,
       "photoUrl": "url"
     },
     {
-      "name": "sadfdsa",
-      "lastName": "asdfasdf",
+      "id": 2,
+      "name": "Gerda",
+      "lastName": "Vozgirdaitė",
+      "email": "gerda@vysnia.com",
+      "password": "AbCd333___!!1!--",
+      "admin": true,
+      "photoUrl": "url"
+    },
+    {
+      "id": 3,
+      "name": "Asta",
+      "lastName": "Aleksandravičiūtė",
+      "email": "asta@vysnia.com",
+      "password": "AbCd333___!!1!--",
+      "admin": true,
+      "photoUrl": "url"
+    },
+    {
+      "id": 4,
+      "name": "Saulė",
+      "lastName": "Demidenkaitė",
+      "email": "saule@vysnia.com",
+      "password": "AbCd333___!!1!--",
+      "admin": true,
+      "photoUrl": "url"
+    },
+    {
+      "id": 5,
+      "name": "Larisa",
+      "lastName": "Petkevičienė",
+      "email": "larisa@vysnia.com",
+      "password": "AbCd333___!!1!--",
+      "admin": true,
+      "photoUrl": "url"
+    },
+    {
+      "name": "Donatas",
+      "lastName": "Bagužis",
       "email": "beauty@gmail.com",
       "password": "beauty123!A",
       "photoUrl": "",
@@ -19,8 +55,8 @@
       "admin": false
     },
     {
-      "name": "sadfdsa",
-      "lastName": "asdfasdf",
+      "name": "Ligita",
+      "lastName": "Bagužė",
       "email": "beauty2@gmail.com",
       "password": "beauty123!A",
       "photoUrl": "",
@@ -28,13 +64,27 @@
       "admin": false
     },
     {
-      "name": "donas",
-      "lastName": "dondonas",
+      "name": "Paulius",
+      "lastName": "Bagužis",
       "email": "beauty3@gmail.com",
       "password": "beauty123!A",
       "photoUrl": "",
       "id": "bc53fce6-03c5-4817-b90f-4d1ab1aebcc9",
       "admin": false
+    }
+  ],
+  "clubs":[
+    {
+      "clubName": "Laukinė Vyšnia",
+      "adminId": 1,
+      "trainings": [
+        {
+          "trainingId": 111,
+          "trainingName": "H Yoga",
+          "trainingTimes": []
+        }
+      ]
+
     }
   ]
 }
