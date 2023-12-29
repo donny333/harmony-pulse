@@ -28,8 +28,6 @@ const Clubs = ( { children } ) => {
             }))
     }, [])
 
-    console.log(clubs);
-
     return ( 
     <ClubsContext.Provider
         value={{

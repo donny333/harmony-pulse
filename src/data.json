@@ -121,7 +121,7 @@
         },
         {
           "trainingName": "Tai Chi užsiėmimai",
-          "trainingId": "JU-2-19",
+          "trainingId": "JU-2-20",
           "trainerId": 5,
           "trainingDay": 2,
           "trainingStart": "20:30",
@@ -137,7 +137,7 @@
         },
         {
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-19",
+          "trainingId": "HJ-3-19",
           "trainerId": 2,
           "trainingDay": 3,
           "trainingStart": "19:10",
@@ -145,7 +145,7 @@
         },
         {
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-20",
+          "trainingId": "HJ-3-20",
           "trainerId": 3,
           "trainingDay": 3,
           "trainingStart": "20:20",
@@ -153,7 +153,7 @@
         },
         {
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-2-18",
+          "trainingId": "JU-4-18",
           "trainerId": 1,
           "trainingDay": 4,
           "trainingStart": "18:00",
@@ -161,7 +161,7 @@
         },
         {
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-2-19",
+          "trainingId": "JU-4-19",
           "trainerId": 1,
           "trainingDay": 4,
           "trainingStart": "19:10",

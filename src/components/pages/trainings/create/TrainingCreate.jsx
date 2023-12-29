@@ -1,60 +1,140 @@
 import { useContext } from "react";
 import StyledTrainingCreate from "./StyledTrainingCreate";
 import UsersContext from "../../../../contexts/UsersContext";
+import { daysNamesLt, hourPickerArray, minutePickerArray } from "../../../../helpers/infoArrays";
+import { useFormik } from "formik";
+
 
 const TrainingCreate = () => {
-
+    
     const {users} = useContext(UsersContext);
+    
+    const daysArray = Object.values(daysNamesLt)
+    
+    const allTrainers = users.filter(user => user.admin).slice().sort((a, b) => a.name.localeCompare(b.name)).map((user, i) => {
+        return {...user, fakeId: `usr-${i}`}
+    })
+    
+    const initialValues = {
+        trainingName: '',
+        trainerId: `${allTrainers[0].fakeId}`,
+        trainingDay: "1",
+        trainingStartHour: hourPickerArray[0],
+        trainingStartMinute: minutePickerArray[0],
+        trainingEndHour: hourPickerArray[0],
+        trainingEndMinute: minutePickerArray[0],
+    }
 
+    const formik = useFormik({
+        initialValues: initialValues,
+        onSubmit: values => {
+            console.log(values)
+        }
+    });
+    
     return ( 
     <StyledTrainingCreate>
         <h1>Create a training</h1>
-        <form>
+        <form onSubmit={formik.handleSubmit}>
             <div>
                 <label htmlFor="trainingName">Training Name</label>
-                <input type="name" id="trainingName" name="trainingName"/>
+                <input 
+                    type="text" 
+                    id="trainingName"
+                    name="trainingName"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingName}
+                />
             </div>
             <div>
                 <label htmlFor="trainerId">Select trainer</label>
-                <select name="trainerId" id="trainerId">
+                <select 
+                    name="trainerId" 
+                    id="trainerId"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainerId}
+                    >
                     {
-                        users.map(user => {
-                            if (user.admin){
-                                return (
-                                    <option>{`${user.name} ${user.lastName}`}</option>
-                                )
-                            }
-
+                        allTrainers.map((user, i) => {
+                            return (
+                                <option value={user.fakeId} key={i}>{`${user.name} ${user.lastName}`}</option>
+                            )
                         })
                     }
-                    <option value="test">Something</option>
                 </select>
             </div>
             <div>
                 <label htmlFor="trainingDay">Training day</label>
-                <select name="" id="">
-                    <option value=""></option>
+                <select 
+                    name="trainingDay" 
+                    id="trainingDay"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingDay}
+                    >
+                    {
+                        daysArray.map((day, i) => {
+                            return (
+                                <option key={i+1} value={i+1}>{day}</option>
+                            )
+                        })
+                    }
                 </select>
             </div>
             <div>
                 <label htmlFor="trainingStart">Training start time</label>
-                <select name="" id="">
-                    <option value=""></option>
+                <select 
+                    name="trainingStartHour" 
+                    id="trainingStartHour"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingStartHour}
+                    >
+                    {
+                        hourPickerArray.map((hour, i) => {
+                            return <option key={i} value={hour}>{hour}</option>
+                        })
+                    }
                 </select>
-                <select name="" id="">
-                    <option value=""></option>
+                <select 
+                    name="trainingStartMinute" 
+                    id="trainingStartMinute"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingStartMinute}
+                    >
+                    {
+                        minutePickerArray.map((minute, i) => {
+                            return <option key={i} value={minute}>{minute}</option>
+                        })
+                    }
                 </select>
             </div>
             <div>
                 <label htmlFor="trainingEnd">Training end time</label>
-                <select name="" id="">
-                    <option value=""></option>
+                <select 
+                    name="trainingEndHour" 
+                    id="trainingEndHour"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingEndHour}
+                    >
+                    {
+                        hourPickerArray.map((hour, i) => {
+                            return <option key={i} value={hour}>{hour}</option>
+                        })
+                    }
                 </select>
-                <select name="" id="">
-                    <option value=""></option>
+                <select 
+                    name="trainingEndMinute" 
+                    id="trainingEndMinute"
+                    onChange={formik.handleChange}
+                    value={formik.values.trainingEndMinute}
+                    >
+                    {
+                        minutePickerArray.map((minute, i) => {
+                            return <option key={i} value={minute}>{minute}</option>
+                        })
+                    }
                 </select>
             </div>
-            <button>Create a training</button>
+            <button type="submit">Create a training</button>
         </form>
     </StyledTrainingCreate>
     );
