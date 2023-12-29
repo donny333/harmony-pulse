@@ -2,16 +2,8 @@ import { useContext } from "react";
 import UsersContext from "../../../../contexts/UsersContext";
 import StyledAdminDashboard from "./StyledAdminDashboard";
 import ClubsContext from "../../../../contexts/ClubsContext";
+import { daysNamesLt } from "../../../../helpers/infoArrays";
 
-const daysNamesLt = {
-    day1: "Pirmadienis",
-    day2: "Antradienis",
-    day3: "Trečiadienis",
-    day4: "Ketvirtadienis",
-    day5: "Penktadienis",
-    day6: "Šeštadienis",
-    day7: "Sekmadienis",
-};
 
 const Contacts = () => {
 
