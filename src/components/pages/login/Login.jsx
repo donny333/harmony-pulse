@@ -20,7 +20,6 @@ const Login = () => {
     const formik = useFormik({
         initialValues: initialValues,
         onSubmit: values =>{
-            console.log(values)
             const userExists = users.find((existingUser) => existingUser.email === values.email && existingUser.password === values.password);
             
             if (userExists) {

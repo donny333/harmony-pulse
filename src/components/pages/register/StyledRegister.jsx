@@ -33,11 +33,6 @@ const StyledRegister = styled.section`
                 box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
             }
         }
-        > p {
-            margin: 0;
-            font-size: 14px;
-            color: red;
-        }
         > button {
             background-color: white;
             border: none;

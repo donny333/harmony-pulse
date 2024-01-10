@@ -3,7 +3,7 @@ import StyledTrainingCreate from "./StyledTrainingCreate";
 import UsersContext from "../../../../contexts/UsersContext";
 import { daysNamesLt, hourPickerArray, minutePickerArray } from "../../../../helpers/infoArrays";
 import { useFormik } from "formik";
-
+import * as Yup from "yup";
 
 const TrainingCreate = () => {
     
@@ -25,8 +25,14 @@ const TrainingCreate = () => {
         trainingEndMinute: minutePickerArray[0],
     }
 
+    const validationScheme = Yup.object().shape({
+        trainingName: Yup.string()
+            .required('Please fill this field')
+    })
+
     const formik = useFormik({
         initialValues: initialValues,
+        validationSchema: validationScheme,
         onSubmit: values => {
             console.log(values)
         }
@@ -44,7 +50,9 @@ const TrainingCreate = () => {
                     name="trainingName"
                     onChange={formik.handleChange}
                     value={formik.values.trainingName}
+                    onBlur={formik.handleBlur}
                 />
+                {formik.touched.trainingName && formik.errors.trainingName ? (<p className="validationError">{formik.errors.trainingName}</p>) : null}
             </div>
             <div>
                 <label htmlFor="trainerId">Select trainer</label>

@@ -73,8 +73,6 @@ const Register = () => {
                 console.log('This email already exists.');
                 setEmailExistsInDb(true);
             }
-
-            console.log(users)
         },
     });
 
