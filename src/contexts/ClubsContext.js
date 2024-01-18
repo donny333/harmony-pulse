@@ -1,15 +1,21 @@
-import { createContext, useReducer, useEffect } from "react";
+import { createContext, useReducer } from "react";
+import { database } from "../database.js";
+import {collection, getDocs} from "firebase/firestore"
 
 const ClubsContext = createContext();
+
+let data = [];
+const querySnapshot = await getDocs(collection(database, "clubs"));
+querySnapshot.forEach((doc) => {
+    data.push(doc.data())
+});
 
 const clubsActioTypes = {
     load: 'load_all_clubs'
 }
 
-const reducer = (state, action) =>{
+const reducer = (state, action) => {
     switch(action.type){
-        case clubsActioTypes.load:
-            return action.data;
         default:
             return state;
     }
@@ -17,16 +23,7 @@ const reducer = (state, action) =>{
 
 const Clubs = ( { children } ) => {
 
-    const [clubs, setClubs] = useReducer(reducer, []);
-
-    useEffect(()=>{
-        fetch('http://localhost:8080/clubs')
-            .then(res => res.json())
-            .then(data => setClubs({
-                type: clubsActioTypes.load,
-                data: data
-            }))
-    }, [])
+    const [clubs, setClubs] = useReducer(reducer, data);
 
     return ( 
     <ClubsContext.Provider

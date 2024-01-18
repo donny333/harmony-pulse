@@ -1,36 +1,29 @@
 import { useContext } from "react";
 import UsersContext from "../../../../contexts/UsersContext";
-import StyledAdminDashboard from "./StyledAdminDashboard";
 import ClubsContext from "../../../../contexts/ClubsContext";
+import TrainingsContext from "../../../../contexts/TrainingsContext";
+import StyledAdminDashboard from "./StyledAdminDashboard";
 import { daysNamesLt } from "../../../../helpers/infoArrays";
-// import { doc, setDoc } from "firebase/firestore";
-// import { database } from "../../../../database";
 
 
 const Contacts = () => {
 
-    const {users} = useContext(UsersContext);
+    const {users, currentUser} = useContext(UsersContext);
 
     const {clubs} = useContext(ClubsContext);
 
-    // if(clubs.length > 0){
-    //     const allTrainings = clubs[0].trainings
-    //     allTrainings.forEach(training => {
-    //         const ID = `${training.clubId}:${training.id}`;
-    //         console.log(ID)
-    //         setDoc(doc(database, 'trainings', ID), {...training});
-    //     })
-    //     console.log(clubs[0].trainings);
-    // }
+    const {trainings} = useContext(TrainingsContext);
+
+    const availableClubs = clubs.filter(club => club.adminId.includes(currentUser.id));
     
     return ( 
     <StyledAdminDashboard>
-        {
-            clubs.map(club => {
-                return (
+        {   
+            availableClubs.length > 0 ?
+            availableClubs.map(club => 
                 <div className="club" key={club.id}>
                     <h1>{club.clubName}</h1>
-                    {club.trainings.map(training =>{
+                    {trainings.map(training =>{
 
                         const trainer = users.find(user =>
                             training.trainerId === user.id
@@ -52,8 +45,12 @@ const Contacts = () => {
                             </div>
                         );
                     })}
-                </div>);
-            })
+                </div>                
+            ) :
+            <div className="club">
+                <h1>You can't administer any club yet.</h1>
+                <p>For any questions please contact your club administrator.</p>
+            </div>
         }
     </StyledAdminDashboard>
     );
