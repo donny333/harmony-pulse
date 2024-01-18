@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Maksimilianas",
       "lastName": "Savickas",
       "email": "max@vysnia.com",
@@ -10,7 +10,7 @@
       "photoUrl": "url"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Gerda",
       "lastName": "Vozgirdaitė",
       "email": "gerda@vysnia.com",
@@ -19,7 +19,7 @@
       "photoUrl": "url"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Asta",
       "lastName": "Aleksandravičiūtė",
       "email": "asta@vysnia.com",
@@ -28,7 +28,7 @@
       "photoUrl": "url"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Saulė",
       "lastName": "Demidenkaitė",
       "email": "saule@vysnia.com",
@@ -37,7 +37,7 @@
       "photoUrl": "url"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Larisa",
       "lastName": "Petkevičienė",
       "email": "larisa@vysnia.com",

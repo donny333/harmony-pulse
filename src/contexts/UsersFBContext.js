@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react"
-import {collection, getDocs} from "firebase/firestore"
+import {collection, getDocs, setDoc} from "firebase/firestore"
 import { database } from "../database.js";
 
 let data = [];
@@ -8,6 +8,14 @@ querySnapshot.forEach((doc) => {
     data.push(doc.data())
 });
 
+// await setDoc(doc(db, "cities", "LA"), {
+//     name: "Los Angeles",
+//     state: "CA",
+//     country: "USA"
+// });
+
+
+
 // further context
 const UsersFBContext = createContext();
 
@@ -15,8 +23,6 @@ const UsersFBContext = createContext();
 const UsersFB = ( { children } ) => {
     
     const [usersFB, setUsersFB] = useState(data);
-
-    console.log(usersFB)
 
     return(
         <UsersFBContext.Provider

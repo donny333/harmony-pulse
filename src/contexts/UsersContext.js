@@ -1,4 +1,6 @@
 import { createContext, useEffect, useReducer, useState } from "react";
+import {doc, setDoc} from "firebase/firestore";
+import { database } from "../database.js";
 
 const UsersContext = createContext();
 
@@ -6,7 +8,6 @@ const usersActionTypes = {
     load: "load_all_users",
     add: "add_a_user"
 };
-
 
 const reducer = (state, action) => {
     switch(action.type){
