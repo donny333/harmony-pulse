@@ -3,6 +3,8 @@ import UsersContext from "../../../../contexts/UsersContext";
 import StyledAdminDashboard from "./StyledAdminDashboard";
 import ClubsContext from "../../../../contexts/ClubsContext";
 import { daysNamesLt } from "../../../../helpers/infoArrays";
+// import { doc, setDoc } from "firebase/firestore";
+// import { database } from "../../../../database";
 
 
 const Contacts = () => {
@@ -11,6 +13,16 @@ const Contacts = () => {
 
     const {clubs} = useContext(ClubsContext);
 
+    // if(clubs.length > 0){
+    //     const allTrainings = clubs[0].trainings
+    //     allTrainings.forEach(training => {
+    //         const ID = `${training.clubId}:${training.id}`;
+    //         console.log(ID)
+    //         setDoc(doc(database, 'trainings', ID), {...training});
+    //     })
+    //     console.log(clubs[0].trainings);
+    // }
+    
     return ( 
     <StyledAdminDashboard>
         {
@@ -31,7 +43,7 @@ const Contacts = () => {
                         const trainingDayName = daysNamesLt[trainingDay];
 
                         return (
-                            <div className="trainingInfo" key={training.trainingId}>
+                            <div className="trainingInfo" key={training.id}>
                                 <h4>{training.trainingName}</h4>
                                 <p>{trainersFullName}</p>
                                 <p>{trainingDayName}</p>

@@ -80,92 +80,114 @@
       "clubName": "Laukinė Vyšnia",
       "trainings": [
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-18",
+          "id": "HJ-1-18",
           "trainerId": "2",
           "trainingDay": 1,
           "trainingStart": "18:00",
-          "trainingEnd": "19:00"
+          "trainingEnd": "19:00",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-19",
+          "id": "HJ-1-19",
           "trainerId": "2",
           "trainingDay": 1,
           "trainingStart": "19:10",
-          "trainingEnd": "20:10"
+          "trainingEnd": "20:10",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-1-20",
+          "id": "HJ-1-20",
           "trainerId": "3",
           "trainingDay": 1,
           "trainingStart": "20:20",
-          "trainingEnd": "21:20"
+          "trainingEnd": "21:20",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-2-18",
+          "id": "JU-2-18",
           "trainerId": "1",
           "trainingDay": 2,
           "trainingStart": "18:00",
-          "trainingEnd": "19:00"
+          "trainingEnd": "19:00",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-2-19",
+          "id": "JU-2-19",
           "trainerId": "1",
           "trainingDay": 2,
           "trainingStart": "19:10",
-          "trainingEnd": "20:10"
+          "trainingEnd": "20:10",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Tai Chi užsiėmimai",
-          "trainingId": "JU-2-20",
+          "id": "JU-2-20",
           "trainerId": "5",
           "trainingDay": 2,
           "trainingStart": "20:30",
-          "trainingEnd": "22:00"
+          "trainingEnd": "22:00",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-3-18",
+          "id": "HJ-3-18",
           "trainerId": "2",
           "trainingDay": 3,
           "trainingStart": "18:00",
-          "trainingEnd": "19:00"
+          "trainingEnd": "19:00",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-3-19",
+          "id": "HJ-3-19",
           "trainerId": "2",
           "trainingDay": 3,
           "trainingStart": "19:10",
-          "trainingEnd": "20:10"
+          "trainingEnd": "20:10",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Hatha joga",
-          "trainingId": "HJ-3-20",
+          "id": "HJ-3-20",
           "trainerId": "3",
           "trainingDay": 3,
           "trainingStart": "20:20",
-          "trainingEnd": "21:20"
+          "trainingEnd": "21:20",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-4-18",
+          "id": "JU-4-18",
           "trainerId": "1",
           "trainingDay": 4,
           "trainingStart": "18:00",
-          "trainingEnd": "19:00"
+          "trainingEnd": "19:00",
+          "sessionsCompleted":[]
         },
         {
+          "clubId":"club_0001",
           "trainingName": "Jogos užsiėmimai II ir IV",
-          "trainingId": "JU-4-19",
+          "id": "JU-4-19",
           "trainerId": "1",
           "trainingDay": 4,
           "trainingStart": "19:10",
-          "trainingEnd": "20:10"
+          "trainingEnd": "20:10",
+          "sessionsCompleted":[]
         }
       ]
     }
