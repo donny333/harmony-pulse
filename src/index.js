@@ -8,6 +8,7 @@ import { Clubs } from './contexts/ClubsContext';
 import { UsersFB } from './contexts/UsersFBContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
     <UsersFB>
         <Clubs>
