@@ -75,8 +75,8 @@
   ],
   "clubs": [
     {
-      "id": "club_01",
-      "adminId": 1,
+      "id": "club_0001",
+      "adminId": "1",
       "clubName": "Laukinė Vyšnia",
       "trainings": [
         {
