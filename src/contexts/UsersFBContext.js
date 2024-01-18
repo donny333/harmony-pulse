@@ -8,15 +8,6 @@ querySnapshot.forEach((doc) => {
     data.push(doc.data())
 });
 
-// await setDoc(doc(db, "cities", "LA"), {
-//     name: "Los Angeles",
-//     state: "CA",
-//     country: "USA"
-// });
-
-
-
-// further context
 const UsersFBContext = createContext();
 
 
