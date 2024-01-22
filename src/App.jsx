@@ -9,7 +9,7 @@ import Login from './components/pages/login/Login';
 import Register from './components/pages/register/Register';
 import AdminDashboard from './components/pages/dashboards/admin/AdminDashboard';
 import UserDashboard from './components/pages/dashboards/user/UserDashboard';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import UsersContext from './contexts/UsersContext';
 import TrainingCreate from './components/pages/trainings/create/TrainingCreate';
 
@@ -29,6 +29,9 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
             <Route path='/contacts' element={<Contacts />} />
+            <Route path='/dashboard' element={<Navigate to='/login' replace/>} />
+            <Route path='/training/create' element={<Navigate to='/login' replace/>} />
+            <Route path='/training/edit' element={<Navigate to='/login' replace/>} />
           </Routes> :
           currentUser.admin ?
           <Routes>

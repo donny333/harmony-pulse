@@ -34,7 +34,19 @@ const TrainingCreate = () => {
         initialValues: initialValues,
         validationSchema: validationScheme,
         onSubmit: values => {
-            console.log(values)
+            const idText = values.trainingName.split(' ').splice(0, 2).map(word => word[0]).join('')
+            
+            const newTraining = {
+                clubId: '',
+                id:`${idText}-${values.trainingDay}-${values.trainingStartHour}`,
+                sessionsCompleted: [],
+                trainerId: '',
+                trainingDay: values.trainingDay * 1,
+                trainingEnd: `${values.trainingEndHour}:${values.trainingEndMinute}`,
+                trainingName: values.trainingName,
+                trainingStart: `${values.trainingStartHour}:${values.trainingStartMinute}`
+            }
+            console.log(newTraining)
         }
     });
     
